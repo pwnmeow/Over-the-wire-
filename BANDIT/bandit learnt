@@ -1,0 +1,77 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++ tr ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+tr - tr is used for replaceing chrecters from a input for example 
+(other use to delete charectors from file input )
+
+tr - delete - to delete the charecters 
+eg:- bandit7@bandit:~$ echo foor | tr --delete o
+output :-  fr
+
+tr --squeeze-repeats  = stops charecters from repeating so many times 
+eg :-
+bandit7@bandit:~$ echo shoooooooooooooooooooooooooorioooooooooooooooooooooooo | tr --squeeze-repeats [a-zA-Z]
+output :- shorio
+
+
+tr complement is used to complement a word for another and last one is a a new line charectors
+bandit7@bandit:~$ echo  fooooooooooooooooooter | tr --complement oe n 
+noooooooooooooooooonennbandit7@bandit:~$ 
+
+====================================================EXAMPLE==================================================
+bandit7@bandit:~$ echo foo-bar | tr  [:lower:] [:upper:]
+FOO-BAR
+
+bandit7@bandit:~$ echo foo-bar | tr [a-z] x 
+xxx-xxx
+
+bandit7@bandit:~$ echo foo-Tbar | tr [a-z] x 
+xxx-Txxx
+
+bandit7@bandit:~$ echo fo0000000000 | tr 0 o
+fooooooooooo
+
+bandit7@bandit:~$ echo leet | tr let 137
+1337
+
+bandit7@bandit:~$ echo foo-bar | tr  - _
+foo_bar
+===================================================Grep+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+grep -i for insensetive search 
+grep -n for line number prints
+grep -A 3 for printing number of lines after a match
+grep -B 3 for printing number of lines after a match
+grep -C 3 for printing number of lines before and after the match
+
+
+===================================================uniq+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+uniq pritns uniq line in a file
+-c is for seeing how many times a charecter is repeated in a file
+
+eg: -bandit8@bandit:~$ sort data.txt | uniq -c 
+     10 07iR6PwHwihvQ3av1fqoRjICCulpoyms
+     10 0ob6rCn4D4jQ6KCiaT5hmOdWFrm2quR1
+      1 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+-d will only show values which are repeated many tiems in the file 
+
+eg:- bandit8@bandit:~$ sort data.txt|  uniq -d
+07iR6PwHwihvQ3av1fqoRjICCulpoyms
+0ob6rCn4D4jQ6KCiaT5hmOdWFrm2quR1
+1drBmDT7PYS7hVgoTWkJSjUZUK7ZAIAa
+1JnkIYLDOdn5M7TGabYxOWkn7HazMjYW
+1wBrW0VGjKeYiXltbEWrUipwSHQfTu44
+2Dxbtw8cnKyHwvt0lfFNYOGc4cE59uua
+78rgduVcLZjLzZmooObdaN541MKV6IfQ
+
+
+-u will only show unique options in many items
+
+eg:- bandit8@bandit:~$ sort data.txt|  uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+ 
+
+===================================================base64+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+base64 - encodes it in base 64 
+base64 -d is for decodeing 
